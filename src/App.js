@@ -4,6 +4,7 @@ import BookCreate from "./components/BookCreate";
 function App(){
     const [books, setBooks] = useState([]);
     const addBook = (title)=>{
+        const obj = 
         setBooks([...books, title]);
     }
     return (

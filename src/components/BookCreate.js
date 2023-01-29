@@ -11,17 +11,17 @@ export default function BookCreate({ addBook }) {
         event.preventDefault();
         const val = text;
         console.log(val);
-        setText("");
         addBook(val);
+        setText("");
     }
     return (
-        <>
-            <br/>
-            <h1>Add a book</h1> 
+        <div className="book-create">
+            <h3>Add a Book</h3>
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type='text' placeholder='Book Title...' value={text}/>
-                <button type='submit'>Submit</button>
+                <label>Title</label>
+                <input className="input" onChange={handleChange} type='text' placeholder='Book Title...' value={text}/>
+                <button className="button" type='submit'>Submit</button>
             </form>
-        </>
+        </div>
   )
 }
