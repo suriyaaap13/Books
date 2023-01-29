@@ -1,15 +1,16 @@
 import { useState } from "react";
 import BookCreate from "./components/BookCreate";
+import BookShow from "./components/BookShow";
 
 function App(){
     const [books, setBooks] = useState([]);
     const addBook = (title)=>{
-        const obj = 
-        setBooks([...books, title]);
+        setBooks([...books, {id: books.length, title: title}]);
     }
     return (
         <>
-            <h1>Hello World!!</h1>
+            {books.length}
+            <BookShow books={books}/>
             <BookCreate addBook={addBook}/>
         </>
         
