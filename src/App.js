@@ -16,9 +16,10 @@ function App(){
 
     const editBookById = (id,title)=>{
         const updatedBooks = books.map((book)=>{
-            if(book.id==id){
+            if(book.id===id){
                 book.title = title;
             }
+            return book;
         });
         setBooks(updatedBooks);
     }

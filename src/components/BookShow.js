@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BookEdit from './BookEdit';
 
 export default function BookShow({book, deleteBookById, onEdit}) {
   
@@ -10,9 +11,13 @@ export default function BookShow({book, deleteBookById, onEdit}) {
   const handleEditClick = ()=>{
     setShowEdit(!showEdit);
   }
+  let content = <h3>{book.title}</h3>
+  if(showEdit) {
+    content = <BookEdit book={book} onEdit = {onEdit} handleEditClick = {handleEditClick}/>;
+  }
   return (
     <div className='book-show'>
-      {book.title}
+      {content}
       <div className='actions'>
         <button className="edit" onClick={handleEditClick}>Edit</button>
         <button className='delete' onClick={handleDeleteClick}>Delete</button>
