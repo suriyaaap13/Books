@@ -1,6 +1,6 @@
 import { useState } from "react";
 import BookCreate from "./components/BookCreate";
-import BookShow from "./components/BookShow";
+import BookList from "./components/BookList";
 
 function App(){
     const [books, setBooks] = useState([]);
@@ -8,11 +8,10 @@ function App(){
         setBooks([...books, {id: books.length, title: title}]);
     }
     return (
-        <>
-            {books.length}
-            <BookShow books={books}/>
+        <div className="app">
+            <BookList books={books}/>
             <BookCreate addBook={addBook}/>
-        </>
+        </div>
         
     )
 }

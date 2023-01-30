@@ -1,5 +1,10 @@
 import React from 'react'
 
-export default function BookShow({ books }) {
-  return books.map((book)=><li>{book.title}</li>)
+export default function BookShow({book}) {
+  return (
+    <div className='book-show'>
+      {book.title}
+    </div>
+  );
 }
+
