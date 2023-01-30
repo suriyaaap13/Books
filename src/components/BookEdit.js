@@ -1,12 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 
-export default function BookEdit({book, onEdit, handleEditClick}) {
+export default function BookEdit({book, onSubmit}) {
   const [title, setTitle] = useState(book.title);
   const handleSubmit = (event)=>{
     event.preventDefault();
-    onEdit(book.id, title);
-    handleEditClick();
+    onSubmit(book.id,title);
   }
   const handleChange = (event)=>{
     setTitle(event.target.value);
