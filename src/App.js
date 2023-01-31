@@ -21,14 +21,20 @@ function App(){
         });
         setBooks([...books, response.data]);
     }
-    const deleteBookById = (id)=>{
+    const deleteBookById = async (id)=>{
+        const response = await axios.delete(`http://localhost:3001/books/${id}`);
+        console.log(response);
         const updatedBooks = books.filter((book)=>{
             return book.id!==id;
         });
         setBooks(updatedBooks);
     }
 
-    const editBookById = (id,title)=>{
+    const editBookById = async (id,title)=>{
+        const response = await axios.put(`http://localhost:3001/books/${id}`,{
+            title
+        });
+        console.log(response);
         const updatedBooks = books.map((book)=>{
             if(book.id===id){
                 book.title = title;
