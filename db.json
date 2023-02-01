@@ -1,16 +1,8 @@
 {
   "books": [
     {
-      "title": "Game of Thrones",
+      "title": "Escape Plan",
       "id": 1
-    },
-    {
-      "title": "Godd of War",
-      "id": 2
-    },
-    {
-      "title": "Harrry Potter",
-      "id": 3
     }
   ]
 }
